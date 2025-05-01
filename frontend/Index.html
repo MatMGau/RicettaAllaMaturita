@@ -6,15 +6,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RicettaAllaMaturità</title>
 
-         <!-- Includi bootstraps.css -->
+         <!-- bootstraps -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-     <!-- Includi Animate.css -->
+     <!--  Animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-</head>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
-<body>
-    <h1 class="animate__animated animate__backInRight">RicetteAllaMaturità</h1>
-</body>
-</html>
+     <!-- icona tab -->
+    <link rel="icon" type="image/svg+xml" href="chef-hat-svgrepo-com.svg">
+
+        <!-- fiel css -->
+        <link rel="stylesheet" href="Index.css">
+    </head>
+
+
+    <body>
+    
+        <div class="app-container">
+          
+            <!-- HEADER -->
+            <header class="app-header">
+
+                <div class="logo-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" viewBox="0 0 960 960" fill="none">
+                        <path d="M462.845 238.751C608.272 59.0617 868.192 314.774 663.067 453.832C704.924 520.181 781.81 677.054 694.09 733.093C607.167 785.186 506.403 830.604 403.146 821.158C325 812.109 321.856 723.932 308.217 662.877C300.22 625.03 295.954 586.416 287.25 548.769C101.408 587.657 76.9909 377.001 234.728 318.38C236.769 317.745 239.062 315.442 239.781 313.401C267.643 220.718 384.616 186.295 462.845 238.751ZM288.796 311.268C312.331 311.029 390.539 332.934 366.868 366.925C361.173 373.897 351.777 376.023 343.019 372.185C282.31 334.175 201.202 363.569 180.421 432.023C152.495 530.688 311.819 522.314 341.27 453.293C354.047 427.784 392.436 439.692 385.994 468.051C376.461 494.977 354.36 515.11 330.526 529.819C322.398 534.748 329.879 547.678 330.453 555.267C342.772 605.319 352.184 656.015 362.368 706.535C363.437 711.951 365.394 714.056 371.314 714.092C476.267 715.393 582.157 686.679 665.139 620.318C682.074 606.506 682.382 606.778 676.05 585.874C669.037 562.72 661.5 539.321 645.279 521.079C634.337 508.774 627.466 494.672 619.605 480.831C617.704 475.995 615.641 473.912 610.004 475.559C584.884 481.766 559.344 481.874 533.839 478.799C503.39 475.193 506.238 431.905 537.379 432.277C630.447 449.229 729.016 368.391 677.307 276.05C642.017 220.903 552.954 200.795 501.027 260.169C486.978 270.728 527.809 295.239 521.637 350.894C520.631 364.004 510.23 373.559 498.196 373.485C483.931 373.68 473.486 359.363 474.587 344.811C470.776 252.698 328.94 231.236 288.796 311.268ZM684.879 638.7C591.409 707.765 486.884 739.793 371.296 739.368C398.406 826.971 571.138 744.162 626.436 719.785C658.685 704.126 690.885 679.298 684.879 638.7Z" fill="#000000"/>
+                        <path d="M99.5719 757.195C73.8529 757.242 68.6569 729.975 85.2559 716.192C117.465 690.775 145.362 658.216 182.179 639.502C200.43 630.953 217.2 652.783 205.874 668.819C180.098 698.678 146.377 721.205 117.498 748.097C111.428 753.336 105.009 757.417 99.5719 757.195Z" fill="#000000"/>
+                        <path d="M907.398 446.191C906.987 453.105 902.253 459.639 894.58 463.911C862.054 482.021 829.522 500.127 796.803 517.885C782.966 525.395 771.698 523.523 765.623 513.784C754.02 496.642 779.704 479.261 794.467 471.224C819.303 456.327 844.135 441.412 869.252 426.999C885.474 416.421 908.413 422.681 907.398 446.191Z" fill="#000000"/>
+                        <path d="M359.597 150.197C359.69 161.116 354.812 168.556 346.897 171.389C338.937 174.238 330.015 171.911 324.464 165.115C307.245 136.189 294.732 104.402 279.444 74.3576C264.783 46.1146 304.559 25.1176 318.492 54.1146C332.119 85.8096 349.112 117.53 359.597 150.197Z" fill="#000000"/>
+                        <path d="M871.006 775.347C870.901 797.017 845.223 801.927 830.057 789.629C817.515 782.723 804.977 775.808 792.524 768.742C781.64 763.583 772.183 753.015 777.495 740.412C780.346 732.76 787.793 727.68 796.351 728.116C819.265 731.488 838.859 746.885 859.808 756.174C867.393 760.174 871.034 767.422 871.006 775.347Z" fill="#000000"/>
+                        <path d="M734.891 192.242C689.425 186.564 729.513 140.188 740.813 119.716C757.112 95.5671 793.141 119.582 777.277 144.12C767.279 156.921 751.399 192.109 734.891 192.242Z" fill="#000000"/>
+                        <path d="M328.049 919.198C310.014 919.008 299.148 902.379 306.568 887.487C311.809 876.969 318.982 867.236 326.383 858.029C332.323 850.639 341.939 849.477 349.567 853.292C357.393 857.206 362.558 866.125 359.623 875.324C355.83 887.211 350.574 898.765 344.715 909.808C341.144 916.537 333.862 919.195 328.049 919.198Z" fill="#000000"/>
+                        <path d="M95.6653 353.486C85.8563 352.297 73.5083 347.107 62.0593 340.351C52.8403 334.911 50.1533 323.234 54.2593 314.004C66.3913 287.797 95.5173 308.074 112.676 317.575C131.644 330.888 121.348 356.419 95.6653 353.486Z" fill="#000000"/>
+                        <path d="M288.794 311.265C328.944 231.254 470.772 252.672 474.586 344.809C473.47 359.384 483.942 373.653 498.194 373.48C510.228 373.555 520.629 364 521.637 350.889C527.793 294.788 487.029 271.312 501.022 260.166C552.95 200.791 642.014 220.899 677.306 276.05C728.878 368.554 630.622 449.123 537.373 432.269C506.163 431.905 503.458 475.211 533.837 478.796C559.341 481.871 584.88 481.763 610.001 475.555C615.525 473.886 617.827 476.019 619.6 480.828C627.462 494.668 634.333 508.771 645.275 521.076C661.497 539.318 669.033 562.717 676.046 585.871C682.378 606.775 682.069 606.503 665.134 620.313C582.167 686.682 476.251 715.387 371.31 714.09C365.389 714.053 363.432 711.948 362.363 706.532C351.712 649.227 338.509 592.394 326.628 535.398C326.431 533.671 328.685 530.912 330.522 529.815C354.344 515.119 376.465 494.967 385.991 468.048C392.47 439.665 353.972 427.814 341.27 453.294C311.837 522.311 152.461 530.68 180.411 432.015C201.22 363.581 282.277 334.151 343.017 372.185C351.774 376.02 361.168 373.894 366.863 366.921C390.517 333.054 312.611 311.051 288.794 311.265Z" fill="white"/>
+                        <path d="M684.88 638.699C690.86 679.309 658.709 704.115 626.435 719.779C571.164 744.104 398.557 827.017 371.297 739.367C486.885 739.792 591.41 707.764 684.88 638.699Z" fill="white"/>
+                        </svg>
+
+                    <span class="app-title">RicettaAllaMaturità</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="70px" width="70px" version="1.1" id="Layer_1" viewBox="0 0 502 502" xml:space="preserve">
+                        <g>
+                          <g fill="black" stroke="white" stroke-width="45" stroke-linejoin="miter">
+                            <path d="M492,309h-45V128c0-5.523-4.477-10-10-10h-52V86c0-5.523-4.477-10-10-10h-62c-5.523,0-10,4.477-10,10v70h-42v-44     c0-5.523-4.477-10-10-10h-52V73c0-5.523-4.477-10-10-10h-62c-5.523,0-10,4.477-10,10v29H65c-5.523,0-10,4.477-10,10v197H10     c-5.523,0-10,4.477-10,10v36c0,5.523,4.477,10,10,10h42v64c0,5.523,4.477,10,10,10s10-4.477,10-10v-64h420     c5.523,0,10-4.477,10-10v-36C502,313.477,497.523,309,492,309z M385,138h42v171h-42V138z M323,96h42v213h-42V96z M261,176h42v133     h-42V176z M199,122h42v187h-42V122z M137,83h42v226h-42V83z M75,122h42v187H75V122z M482,345H20v-16h462V345z"/>
+                            <path d="M440,379c-5.523,0-10,4.477-10,10v40c0,5.523,4.477,10,10,10s10-4.477,10-10v-40C450,383.477,445.523,379,440,379z"/>
+                            <path d="M96,140c-5.523,0-10,4.477-10,10v9c0,5.523,4.477,10,10,10s10-4.477,10-10v-9C106,144.477,101.523,140,96,140z"/>
+                            <path d="M96,185c-5.523,0-10,4.477-10,10v90c0,5.523,4.477,10,10,10s10-4.477,10-10v-90C106,189.477,101.523,185,96,185z"/>
+                            <path d="M282,192c-5.523,0-10,4.477-10,10v5.533c0,5.523,4.477,10,10,10s10-4.477,10-10V202C292,196.477,287.523,192,282,192z"/>
+                            <path d="M282,232c-5.523,0-10,4.477-10,10v43c0,5.523,4.477,10,10,10s10-4.477,10-10v-43C292,236.477,287.523,232,282,232z"/>
+                          </g>
+                      
+                          <!-- Layer 2: Riempimento Bianco (disegnato sopra) -->
+                          <!-- fill="white": Riempimento bianco -->
+                          <!-- stroke="none": Nessun contorno proprio -->
+                          <g fill="black" stroke="none">
+                            <path d="M492,309h-45V128c0-5.523-4.477-10-10-10h-52V86c0-5.523-4.477-10-10-10h-62c-5.523,0-10,4.477-10,10v70h-42v-44     c0-5.523-4.477-10-10-10h-52V73c0-5.523-4.477-10-10-10h-62c-5.523,0-10,4.477-10,10v29H65c-5.523,0-10,4.477-10,10v197H10     c-5.523,0-10,4.477-10,10v36c0,5.523,4.477,10,10,10h42v64c0,5.523,4.477,10,10,10s10-4.477,10-10v-64h420     c5.523,0,10-4.477,10-10v-36C502,313.477,497.523,309,492,309z M385,138h42v171h-42V138z M323,96h42v213h-42V96z M261,176h42v133     h-42V176z M199,122h42v187h-42V122z M137,83h42v226h-42V83z M75,122h42v187H75V122z M482,345H20v-16h462V345z"/>
+                            <path d="M440,379c-5.523,0-10,4.477-10,10v40c0,5.523,4.477,10,10,10s10-4.477,10-10v-40C450,383.477,445.523,379,440,379z"/>
+                            <path d="M96,140c-5.523,0-10,4.477-10,10v9c0,5.523,4.477,10,10,10s10-4.477,10-10v-9C106,144.477,101.523,140,96,140z"/>
+                            <path d="M96,185c-5.523,0-10,4.477-10,10v90c0,5.523,4.477,10,10,10s10-4.477,10-10v-90C106,189.477,101.523,185,96,185z"/>
+                            <path d="M282,192c-5.523,0-10,4.477-10,10v5.533c0,5.523,4.477,10,10,10s10-4.477,10-10V202C292,196.477,287.523,192,282,192z"/>
+                            <path d="M282,232c-5.523,0-10,4.477-10,10v43c0,5.523,4.477,10,10,10s10-4.477,10-10v-43C292,236.477,287.523,232,282,232z"/>
+                          </g>
+                        </g>
+                      </svg>
+                      
+                </div>
+
+                <div class="header-icons-right">
+
+                </div>
+            </header>
+    
+            <div class="app-body">
+                <!-- ======================= SIDEBAR ======================= -->
+                <aside class="app-sidebar">
+                    <nav class="sidebar-nav">
+                        <!-- Link saranno # per ora -->
+                        <a href="#" class="nav-link active"><i class="bi bi-card-image nav-icon"></i> Ricettario AI</a>
+                        <a href="#" class="nav-link"><i class="bi bi-journal-code nav-icon"></i> Progettazione</a>
+                        <a href="#" class="nav-link"><i class="bi bi-box-arrow-in-right nav-icon"></i> Login/Sign-up</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="back-button"><i class="bi bi-arrow-left-circle"></i></button>
+                    </div>
+                </aside>
+    
+                <!-- ==================== MAIN CONTENT ==================== -->
+                <main class="app-main-content">
+                    <section class="content-section">
+                        <h2 class="section-title">Genera una Ricetta dall'Immagine</h2>
+                        <p class="section-subtitle">Manda un'immagine degli ingredienti e ricevi una ricetta! Con l'opzione di aggiungere semplici richieste qui sotto.</p>
+    
+                        <!-- Form Upload -->
+                        <form id="recipeForm" class="mt-4">
+                             <!-- Area Selezione Immagine (Simile al Figma) -->
+                             <label for="imageInput" class="image-upload-area">
+                                <div id="imagePreview">
+                                    <!-- L'anteprima o l'icona appariranno qui -->
+                                    <i class="bi bi-plus-circle-dotted placeholder-icon"></i>
+                                    <span class="placeholder-text">Select Image</span>
+                                </div>
+                                <input type="file" id="imageInput" accept="image/*" required hidden>
+                             </label>
+    
+                             <!-- Area Richieste Aggiuntive -->
+                             <div class="additional-prompt-area mt-3">
+                                 <label for="userPrompt" class="form-label visually-hidden">Richieste aggiuntive</label>
+                                 <textarea class="form-control" id="userPrompt" rows="2" placeholder="Aggiungi delle semplici richieste qui! (es. voglio che sia presente la carne e il sugo...)"></textarea>
+                                 <button type="button" id="submitBtn" class="btn btn-submit">
+                                     Invia <i class="bi bi-arrow-right"></i>
+                                 </button>
+                             </div>
+                        </form>
+    
+                        <!-- Indicatore di Caricamento -->
+                        <div id="loadingIndicator" class="loading-container" style="display: none;">
+                             <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                             </div>
+                             <p>Analisi immagine e generazione ricetta...</p>
+                        </div>
+    
+                        <!-- Area Risultati -->
+                        <div id="resultsArea" class="results-container mt-4">
+                            <!-- I risultati verranno inseriti qui -->
+                            <!-- Esempio Struttura Risultati (verrà creata da JS):
+                            <div class="result-item">
+                                <h3>Nome Ricetta: Lasagna</h3>
+                                <p><strong>Origine:</strong> Italia</p>
+                                <h5>Ingredienti:</h5>
+                                <ul>
+                                    <li>Xg carne, Yg sugo, 3 uova, ecc...</li>
+                                </ul>
+                                <h5>Steps:</h5>
+                                <ol>
+                                    <li>Passo 1...</li>
+                                    <li>Passo 2...</li>
+                                </ol>
+                            </div>
+                            -->
+                        </div>
+                    </section>
+                </main> <!-- Fine app-main-content -->
+            </div> <!-- Fine app-body -->
+        </div> <!-- Fine app-container -->
+    
+    
+        <!-- Bootstrap JS Bundle (necessario per eventuali componenti BS futuri) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Il tuo script JS personalizzato -->
+        <script src="index.js"></script>
+    </body>
+    </html>

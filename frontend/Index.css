@@ -1,12 +1,337 @@
-@import 'animate.css/animate.min.css';
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+.kaushan-script-regular {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.body {
-    box-sizing: content-box;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+:root {
+    --primary-blue: #4a6fa5; /* Blu principale */
+    --secondary-blue: #7aa6c2;
+    --background-grey: #e9eef2; /* Grigio sfondo generale */
+    --white: #ffffff;
+    --dark-text: #343a40; /* Testo scuro */
+    --muted-text: #6c757d; /* Testo grigio */
+    --border-light: #dee2e6; /* Bordo chiaro */
+
+    --header-height: 65px;
+    --sidebar-width: 240px;
+    --main-border-radius: 15px;
+    --input-border-radius: 10px;
+    --shadow:10px 40px 15px rgba(0, 0, 0, 0.08);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset Base */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-blue);
+    color: var(--dark-text);
+    height: 100vh;
+    overflow: hidden; /* Impedisce scroll del body */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* --- Header --- */
+.app-header {
+    height: var(--header-height);
+    background-color: var(--primary-blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    flex-shrink: 0; /* Non si restringe */
+    padding-top: 55px;
+    padding-bottom: 55px;
+    box-shadow: 0 40px 15px rgba(0, 0, 0, 0.08);  
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spazio tra icona e titolo */
+    margin-left: 55px;
+}
+.app-title {
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 3px;
+    text-decoration: underline;
+    text-decoration-color: #cfd3d6;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    font-size: clamp(26px, 16px + 2.5vw, 50px);
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #464545;
+}
+
+
+/* --- Body Layout (Sidebar + Main) --- */
+.app-body {
+    display: flex;
+    flex-grow: 1; /* Occupa lo spazio rimanente */
+    overflow: hidden; /* Contiene lo scroll all'interno */
+}
+
+/* --- Sidebar --- */
+.app-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--background-grey);
+    padding: 20px 0px; /* Padding verticale, 0 orizzontale */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge footer in basso */
+    flex-shrink: 0; /* Non si restringe */
+    border-top-right-radius: var(--main-border-radius);
+    border-bottom-right-radius: var(--main-border-radius);
+}
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+.nav-link {
+    color: var(--primary-blue);
+    
+    text-decoration: none;
+    padding: 12px 25px; /* Padding link navigazione */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spazio icona/testo */
+    margin-bottom: 5px;
+    font-weight: 500;
+    border-top-left-radius: 25px; /* Arrotondamento interno */
+    border-bottom-left-radius: 25px;
+    margin-right: 15px; /* Crea spazio per l'arrotondamento esterno */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.nav-icon {
+    font-size: 1.3rem;
+    width: 25px; /* Larghezza fissa icona per allineamento */
+    text-align: center;
+}
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+.nav-link.active {
+    background-color: var(--primary-blue); /* Sfondo pagina attiva */
+    color: var(--white);
+    font-weight: 600;
+}
+.sidebar-footer {
+    padding: 15px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separatore leggero */
+}
+.back-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+.back-button:hover {
+    opacity: 1;
+}
+
+
+/* --- Main Content --- */
+.app-main-content { 
+    margin-top: 15px;
+    flex-grow: 1; /* Occupa spazio restante */
+    padding: 30px 40px;
+    overflow-y: auto; /* Abilita scroll solo qui */
+    background-color: var(--background-gey);
+}
+.content-section {
+    margin-top: 40px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--main-border-radius);
+    box-shadow: var(--shadow);
+}
+.section-title {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.section-subtitle {
+    color: var(--muted-text);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+
+/* --- Stile Form Upload --- */
+.image-upload-area {
+    border: 2px dashed var(--border-light);
+    border-radius: var(--main-border-radius);
+    padding: 20px;
+    display: flex; /* Per centrare contenuto interno */
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    background-color: #fafbfc; /* Sfondo leggermente diverso */
+    position: relative; /* Necessario per l'input nascosto */
+    overflow: hidden; /* Nasconde parti dell'immagine se esce */
+}
+.image-upload-area:hover {
+    border-color: var(--secondary-blue);
+    background-color: #f5f8fa;
+}
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Icona sopra testo */
+    justify-content: center;
+    align-items: center;
+    color: var(--muted-text);
+}
+#imagePreview img { /* Stile anteprima quando caricata */
+    max-width: 100%;
+    max-height: 250px; /* Limita altezza anteprima */
+    object-fit: contain; /* Mostra tutta l'immagine, potrebbe non riempire */
+    border-radius: calc(var(--main-border-radius) / 2);
+}
+.placeholder-icon {
+    font-size: 3.5rem;
+    color: var(--border-light);
+    margin-bottom: 10px;
+}
+.placeholder-text {
+    font-weight: 500;
+    color: var(--muted-text);
+}
+
+.additional-prompt-area {
+    display: flex;
+    align-items: center; /* Allinea verticalmente textarea e bottone */
+    gap: 15px;
+    background-color: #f8f9fa; /* Sfondo leggero area prompt */
+    padding: 15px;
+    border-radius: var(--input-border-radius);
+    margin-top: -10px; /* Leggera sovrapposizione con area immagine */
+    position: relative; /* Per stare sopra */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.additional-prompt-area .form-control {
+    flex-grow: 1; /* Occupa spazio */
+    border-radius: var(--input-border-radius);
+    border: 1px solid var(--border-light);
+    resize: none; /* Disabilita ridimensionamento textarea */
+}
+.btn-submit {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--input-border-radius);
+    padding: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* Non manda a capo il testo */
+}
+.btn-submit:hover {
+    background-color: var(--primary-blue);
+}
+.btn-submit .bi {
+    font-size: 1.1rem;
+}
+
+/* --- Stile Loading --- */
+.loading-container {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--primary-blue);
+}
+.loading-container .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--secondary-blue);
+    margin-bottom: 15px;
+}
+
+/* --- Stile Area Risultati --- */
+.results-container {
+    background-color: #fdfdfd; /* Sfondo risultati leggermente diverso */
+    padding: 25px 30px;
+    border-radius: var(--main-border-radius);
+    border: 1px solid #f0f0f0;
+    /* Animazione entrata (come prima) */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    min-height: 100px; /* Altezza minima per vedere il bordo */
+}
+.results-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.result-item { /* Stile per ogni eventuale ricetta */
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--border-light);
+}
+.result-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.result-item h3 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.result-item h5 {
+    color: var(--secondary-blue);
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.result-item p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+.result-item ul, .result-item ol {
+    padding-left: 20px;
+}
+.result-item li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+/* Utilities Visibilità */
+.visually-hidden { /* Da Bootstrap, utile */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
