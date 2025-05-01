@@ -1,0 +1,12 @@
+@import 'animate.css/animate.min.css';
+
+.body {
+    box-sizing: content-box;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}

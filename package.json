@@ -1,0 +1,25 @@
+{
+  "name": "ricettaallamaturita",
+  "version": "1.0.0",
+  "description": "maturita 2025 Galilux di Matisse Gaudenzi Maradola",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatMGau/RicettaAllaMaturita.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MatMGau/RicettaAllaMaturita/issues"
+  },
+  "homepage": "https://github.com/MatMGau/RicettaAllaMaturita#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.5"
+  }
+}
