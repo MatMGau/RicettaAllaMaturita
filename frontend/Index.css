@@ -46,10 +46,11 @@ body {
 }
 
 /* --- Header --- */
+
 .app-header {
     height: var(--header-height);
     background-color: var(--primary-blue);
-    color: var(--white);
+    color: var(--white); 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,19 +58,38 @@ body {
     flex-shrink: 0; /* Non si restringe */
     padding-top: 55px;
     padding-bottom: 55px;
-    box-shadow: 0 40px 15px rgba(0, 0, 0, 0.08);  
+    box-shadow: 0 40px 15px rgba(0, 0, 0, 0.08);
+    top: 0;
+    position: sticky;
+    z-index: 1020; 
 }
+.hamburger-button {
+    pointer-events: auto !important;
+    background: none;
+    border: none;
+    position:relative;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 15px; /* Spazio tra hamburger e logo */
+    z-index: 99999 !important; /* Sopra l'header per essere cliccabile */
+    display: none;
+    margin: 5px;
+}
+
 .logo-title {
     display: flex;
     align-items: center;
     gap: 15px; /* Spazio tra icona e titolo */
-    margin-left: 55px;
 }
+
+
 .app-title {
     font-family: 'Kaushan Script', cursive;
     letter-spacing: 3px;
     text-decoration: underline;
-    text-decoration-color: #cfd3d6;
+    text-decoration-color: #d6d3cf;
     text-underline-offset: 8px;
     text-decoration-thickness: 2px;
     font-size: clamp(26px, 16px + 2.5vw, 50px);
@@ -82,7 +102,8 @@ body {
 .app-body {
     display: flex;
     flex-grow: 1; /* Occupa lo spazio rimanente */
-    overflow: hidden; /* Contiene lo scroll all'interno */
+    position:relative; /* Contiene lo scroll all'interno */
+    
 }
 
 /* --- Sidebar --- */
@@ -96,6 +117,8 @@ body {
     flex-shrink: 0; /* Non si restringe */
     border-top-right-radius: var(--main-border-radius);
     border-bottom-right-radius: var(--main-border-radius);
+    z-index: 1000;
+
 }
 .sidebar-nav {
     display: flex;
@@ -334,4 +357,122 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+
+/* ================================================= */
+/* =============== MEDIA QUERIES =================== */
+/* ================================================= */
+
+/* Per schermi MEDI e PICCOLI (es. tablet e mobile, o finestre PC strette) */
+/* Consideriamo un breakpoint comune come 991.98px (sotto i 992px di Bootstrap lg) */
+@media (max-width: 991.98px) {
+
+    .hamburger-button {
+        display: block; /* Mostra l'hamburger */
+    }
+
+    /* --- Adattamenti Sidebar --- */
+    .app-sidebar {
+        position: fixed; /* Per farla scorrere o sovrapporre se la mostriamo con JS */
+        left: 0;
+        top: var(--header-height); /* Sotto l'header */
+        height: calc(100vh - var(--header-height)); /* Altezza piena meno header */
+        transform: translateX(-100%); /* Nascosta fuori schermo a sinistra */
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000; /* Sopra il contenuto se si sovrappone */
+        border-top-right-radius: 0; /* Rimuovi raggio quando è un overlay */
+        border-bottom-right-radius: 0;
+        box-shadow: var(--shadow); /* Aggiungi ombra se diventa un overlay */
+    }
+
+    /* Classe da aggiungere con JS per mostrare la sidebar */
+    .app-sidebar.is-visible {
+        transform: translateX(0);
+    }
+
+    /* --- Adattamenti Main Content --- */
+    .app-main-content {
+        padding: 20px; /* Riduci padding su schermi più piccoli */
+        /* Occuperà automaticamente tutta la larghezza se la sidebar è fuori flusso */
+    }
+
+    /* --- Adattamenti Header (per eventuale bottone hamburger) --- */
+    .app-header {
+        /* Potremmo aggiungere qui un bottone hamburger e nascondere il logo-title
+           per fare spazio, ma per ora lo lasciamo così.
+           Solo per dimostrazione, se avessimo un bottone hamburger:
+        */
+    }
+    .logo-title .app-title {
+        /* Su schermi molto piccoli potresti voler nascondere il titolo testuale */
+        /* display: none; */ /* Esempio */
+
+    }
+    .libri,.cappello {
+        width: 50px;
+        height: 50px;
+    }
+   
+}
+
+
+/* Per schermi MOLTO PICCOLI (es. mobile in verticale) */
+@media (max-width: 575.98px) {
+    .app-header {
+        padding: 0 15px; /* Riduci padding header */
+    }
+    .logo-title .app-title {
+        font-size: 1.2rem; /* Riduci dimensione titolo app */
+    }
+    .header-icon {
+        font-size: 1.4rem; /* Riduci dimensione icone header */
+    }
+    .app-sidebar {
+        width: 280px; /* Se la sidebar è fissa e si apre, potresti volerla un po' più larga su mobile */
+    }
+
+    .content-section {
+        padding: 20px; /* Riduci padding interno sezioni */
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    /* Form Upload */
+    .image-upload-area {
+        min-height: 150px;
+        padding: 15px;
+    }
+    .placeholder-icon {
+        font-size: 2.5rem;
+    }
+
+    .additional-prompt-area {
+        flex-direction: column; /* Impila textarea e bottone verticalmente */
+        align-items: stretch; /* Estendi elementi a larghezza piena */
+        padding: 10px;
+    }
+    .additional-prompt-area .form-control {
+        margin-bottom: 10px; /* Spazio tra textarea e bottone */
+    }
+    .btn-submit {
+        width: 100%; /* Bottone a larghezza piena */
+        justify-content: center; /* Centra testo/icona nel bottone */
+    }
+
+    /* Risultati */
+    .results-container {
+        padding: 15px;
+    }
+    .result-item h3 {
+        font-size: 1.2rem;
+    }
+     .result-item h5 {
+        font-size: 0.95rem;
+    }
 }
